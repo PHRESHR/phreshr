@@ -1,0 +1,20 @@
+fragment ShowInfo on Show {
+  id
+  uid
+  title
+  description
+  posterImageUrl
+  featureImageUrl
+  season
+  ...ShowEpisodes
+}
+
+fragment ShowEpisodes on Show {
+  episodes(filter: {id_not: $id}) {
+    id
+    uid
+    title
+    description
+    thumbImageUrl
+  }
+}

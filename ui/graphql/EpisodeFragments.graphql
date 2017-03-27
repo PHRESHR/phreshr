@@ -1,0 +1,14 @@
+fragment EpisodeInfo on Episode {
+  id
+  uid
+  title
+  description
+  thumbImageUrl
+  featureImageUrl
+  videoUrl
+  createdAt
+  topics {
+    id
+    name
+  }
+}

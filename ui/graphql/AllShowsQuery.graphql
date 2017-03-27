@@ -1,0 +1,7 @@
+#import "./ShowFragments.graphql"
+
+query AllShows($id: ID) {
+  allShows {
+    ...ShowInfo
+  }
+}

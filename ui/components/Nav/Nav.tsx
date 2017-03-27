@@ -1,0 +1,16 @@
+import * as React from 'react';
+import { NavLink } from 'react-router-dom';
+import Navigation from 'ui/styles/Navigation';
+
+function Nav() {
+  return (
+    <Navigation>
+      <NavLink exact to="/" activeClassName="active">Home</NavLink>
+      <NavLink to="/shows" activeClassName="active">Shows</NavLink>
+      <NavLink to="/about" activeClassName="active">About</NavLink>
+      <NavLink to="/oops" activeClassName="active">Oops</NavLink>
+    </Navigation>
+  );
+};
+
+export default Nav;

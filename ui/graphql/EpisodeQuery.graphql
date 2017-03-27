@@ -1,0 +1,11 @@
+#import "./EpisodeFragments.graphql"
+#import "./ShowFragments.graphql"
+
+query Episode($id: ID) {
+  Episode (id: $id) {
+    ...EpisodeInfo
+    show {
+      ...ShowInfo
+    }
+  }
+}
