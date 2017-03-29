@@ -1,9 +1,9 @@
 import * as React from 'react';
-import * as Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import * as serialize from 'serialize-javascript';
 
 const isProd = process.env.NODE_ENV === 'production';
-const head = Helmet.rewind();
+const helmet = Helmet.renderStatic();
 
 import 'ui/styles/global-styles';
 
@@ -17,12 +17,12 @@ function Html({html, state, styles}) {
   return (
     <html lang="en">
       <head>
-        {head.base.toComponent()}
-        {head.title.toComponent()}
-        {head.meta.toComponent()}
-        {head.link.toComponent()}
-        {head.script.toComponent()}
+        <title>{helmet.title.toComponent()}</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        {helmet.meta.toComponent()}
+        {helmet.base.toComponent()}
+        {helmet.link.toComponent()}
+        {helmet.script.toComponent()}
         <style type="text/css">
           {styles}
         </style>

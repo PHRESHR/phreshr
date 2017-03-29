@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import Container from 'ui/styles/Container';
 import { media } from 'ui/styles/utils';
 
-const Grid = styled(Container)`
+const EpisodeContainer = styled(Container)`
+  ${media.md`
+  `}
 `;
 
-export default Grid;
+export default EpisodeContainer;

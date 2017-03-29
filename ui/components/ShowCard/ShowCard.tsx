@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import ShowEntry from 'ui/styles/ShowEntry';
+import ShowEntry from './styles';
+import { AspectRatio16x9 } from 'ui/styles/AspectRatios';
 
 interface Props {
   show: {
@@ -20,8 +21,12 @@ const ShowCard: React.SFC<Props> = ({ show, detail }) => {
     return (
       <div className="show-view">
         <section className="show-marquee">
-          <div className="show-image">
-            <img src={show.featureImageUrl} alt={show.title}/>
+          <div className="media">
+            <AspectRatio16x9>
+              <div className="show-image">
+                <img src={show.featureImageUrl} alt={show.title}/>
+              </div>
+            </AspectRatio16x9>
           </div>
           <div className="show-info">
             <h1>{show.title}</h1>

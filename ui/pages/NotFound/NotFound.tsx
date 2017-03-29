@@ -1,11 +1,19 @@
 import * as React from 'react';
 import { compose, lifecycle, pure, setPropTypes } from 'recompose';
-import * as Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
-function NotFound() {
+interface Props {
+  route;
+}
+
+function NotFound(props: Props) {
+  console.log(props);
+  const {} = props;
   return (
     <div>
-      <Helmet title="Page Not Found"/>
+      <Helmet>
+        <title>Page Not Found</title>
+      </Helmet>
       <h1>Page not found</h1>
     </div>
   );
@@ -17,6 +25,7 @@ const propTypes = {
 
 const componentLifecycle = lifecycle({
   componentWillMount() {
+    console.log(this.props.staticContext);
     if (this.props.staticContext) {
       this.props.staticContext.status = 404;
     }

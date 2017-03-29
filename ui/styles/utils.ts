@@ -27,6 +27,7 @@ export function aspectRatio(width, height) {
     return (height / width);
   }
   return `
+    width: 100%;
     position: relative;
     padding-bottom: calc(${ratio()} * 100%);
 

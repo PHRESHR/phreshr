@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import Branding from 'ui/styles/Branding';
+import Branding from './styles';
 
 function Logo() {
   return (

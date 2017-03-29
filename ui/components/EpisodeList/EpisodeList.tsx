@@ -7,9 +7,17 @@ import displayLoadingState from 'ui/components/Loading';
 import EpisodeCard from 'ui/components/EpisodeCard';
 import * as EPISODES_QUERY from 'ui/graphql/AllEpisodesQuery.graphql';
 
-function EpisodeList({ allEpisodes }) {
+interface Props {
+  allEpisodes;
+}
+
+function EpisodeList(props: Props) {
+  const { allEpisodes } = props;
   return (
     <EpisodeContainer wrap justify="space-between" className="episodes-container">
+      <div className="header">
+        <h2>Episodes</h2>
+      </div>
       {allEpisodes.map(episode =>
         <EpisodeCard key={episode.id} episode={episode}/>,
       )}

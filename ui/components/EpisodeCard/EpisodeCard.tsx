@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import CardEntry from 'ui/styles/CardEntry';
+import CardEntry from './styles';
 import { AspectRatio16x9 } from 'ui/styles/AspectRatios';
 
 interface Props {

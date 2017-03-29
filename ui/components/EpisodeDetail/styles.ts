@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import Container from 'ui/styles/Container';
 import { media } from 'ui/styles/utils';
 
-const PlayerHub = styled.div`
+export const PlayerHub = styled.div`
   .watch-area {
     padding: 1.875rem 0;
 
@@ -36,6 +37,10 @@ const PlayerHub = styled.div`
     max-width: 87.5rem;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 1rem;
+    ${media.md`
+      padding: 0;
+    `}
   }
 
   .episode-details {
@@ -45,4 +50,7 @@ const PlayerHub = styled.div`
   }
 `;
 
-export default PlayerHub;
+export const DetailContainer = styled(Container)`
+  ${media.md`
+  `}
+`;

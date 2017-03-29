@@ -1,13 +1,14 @@
 import * as React from 'react';
-import * as Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import ShowList from 'ui/components/ShowList';
 
 function Shows() {
   return (
     <div>
-      <Helmet title="Shows"/>
-      <h1>Shows</h1>
+      <Helmet>
+        <title>Shows</title>
+      </Helmet>
       <ShowList />
     </div>
   );

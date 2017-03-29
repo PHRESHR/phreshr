@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Logo from 'ui/components/Logo';
 import Nav from 'ui/components/Nav';
-import Toolbar from 'ui/styles/Toolbar';
+import Toolbar from './styles';
 
 function Header() {
   return (

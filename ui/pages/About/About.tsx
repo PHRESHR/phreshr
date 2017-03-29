@@ -1,10 +1,12 @@
 import * as React from 'react';
-import * as Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 function About() {
   return (
     <div>
-      <Helmet title="About" />
+      <Helmet>
+        <title>About</title>
+      </Helmet>
       <h1>About</h1>
     </div>
   );

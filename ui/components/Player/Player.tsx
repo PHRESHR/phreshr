@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { compose, lifecycle, toClass } from 'recompose';
-import VideoJs from 'ui/styles/VideoJs';
+import VideoJs from './styles';
 
 let videoNode: HTMLVideoElement;
 function VideoPlayer() {
