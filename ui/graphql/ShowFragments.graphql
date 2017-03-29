@@ -5,7 +5,6 @@ fragment ShowInfo on Show {
   description
   posterImageUrl
   featureImageUrl
-  season
   ...ShowEpisodes
 }
 

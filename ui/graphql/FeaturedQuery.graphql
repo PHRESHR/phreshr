@@ -1,0 +1,7 @@
+#import "./FeaturedFragments.graphql"
+
+query Featured($id: ID) {
+  Featured (id: $id) {
+    ...FeaturedInfo
+  }
+}

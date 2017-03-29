@@ -11,6 +11,10 @@ export interface AllEpisodesQuery {
   } >;
 }
 
+export interface AllFeaturedsQuery {
+  allFeatureds: Array<FeaturedInfoFragment>;
+}
+
 export interface AllShowsQueryVariables {
   id: string | null;
 }
@@ -29,6 +33,14 @@ export interface EpisodeQuery {
   } | null;
 }
 
+export interface FeaturedQueryVariables {
+  id: string | null;
+}
+
+export interface FeaturedQuery {
+  Featured: FeaturedInfoFragment;
+}
+
 export interface ShowQueryVariables {
   id: string | null;
 }
@@ -43,13 +55,24 @@ export interface EpisodeInfoFragment {
   title: string;
   description: string;
   thumbImageUrl: string;
-  featureImageUrl: string | null;
   videoUrl: string;
+  season: number;
   createdAt: String | null;
   topics: Array< {
     id: string,
     name: string,
   } > | null;
+}
+
+export interface FeaturedInfoFragment {
+  id: string;
+  episode: {
+    id: string,
+    uid: string | null,
+    title: string,
+    description: string,
+    featureImageUrl: string | null,
+  } | null;
 }
 
 export interface ShowInfoFragment extends ShowEpisodesFragment {
@@ -59,7 +82,6 @@ export interface ShowInfoFragment extends ShowEpisodesFragment {
   description: string;
   posterImageUrl: string | null;
   featureImageUrl: string | null;
-  season: number;
 }
 
 export interface ShowEpisodesFragment {

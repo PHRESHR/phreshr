@@ -1,0 +1,10 @@
+fragment FeaturedInfo on Featured {
+  id
+  episode {
+    id
+    uid
+    title
+    description
+    featureImageUrl
+  }
+}

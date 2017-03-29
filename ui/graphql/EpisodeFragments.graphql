@@ -4,8 +4,8 @@ fragment EpisodeInfo on Episode {
   title
   description
   thumbImageUrl
-  featureImageUrl
   videoUrl
+  season
   createdAt
   topics {
     id
