@@ -7,43 +7,13 @@ export const ShowLede = styled(Container)`
   display: flex;
   flex-direction: row;
   flex-flow: row wrap;
-  padding-bottom: 5rem;
-  .show-view {
-    width: 100%;
-  }
-  .show-marquee {
-    display: flex;
-    .media {
-      display: flex;
-      flex: 0 0  55%;
-      ${media.md`
-        flex: 0 0  60%;
-      `}
-    }
-  }
-  .show-image {
-    display: flex;
-  }
-
-  .show-info {
-    padding: 0 0.5rem;
-    ${media.md`
-      padding: 0 2rem;
-    `}
-
-    h1 {
-      font-size: 2rem;
-      ${media.md`
-        font-size: 3.5rem;
-      `}
-    }
-  }
+  padding-bottom: .5rem;
   ${media.md`
+    padding-bottom: 5rem;
   `}
 `;
 
 export const ShowHub = styled(Container)`
-
   ${media.md`
   `}
 `;
@@ -52,4 +22,11 @@ export const DetailContainer = styled(Container)`
   flex-direction: row;
   ${media.md`
   `}
+
+  h2 {
+    font-size: 1.2rem;
+    ${media.md`
+      font-size: 1.5rem;
+    `}
+  }
 `;

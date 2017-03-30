@@ -1,12 +1,15 @@
 import styled from 'styled-components';
-import { aspectRatio } from 'ui/styles/utils';
+import { aspectRatio, media } from 'ui/styles/utils';
 
  export const AspectRatio16x9 = styled.div`
   ${ aspectRatio(16, 9) }
 `;
 
 export const AspectRatio5x2 = styled.div`
-  ${ aspectRatio(5, 2) }
+  ${ aspectRatio(4, 3) }
+  ${media.md`
+    ${ aspectRatio(5, 2) }
+  `}
 `;
 
 export const AspectRatio4x3 = styled.div`

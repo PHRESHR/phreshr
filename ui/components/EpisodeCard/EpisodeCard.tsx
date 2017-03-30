@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import CardEntry from './styles';
+import { CardInfo, CardEntry } from './styles';
 import { AspectRatio16x9 } from 'ui/styles/AspectRatios';
 
 interface Props {
@@ -22,7 +22,7 @@ function Episode(props: Props) {
   const { episode, detail } = props;
   if (detail) {
     return (
-      <section className="episode-info">
+      <CardInfo className="episode-info">
         <header>
           <h3>{episode.show.title}</h3>
           <h1>{episode.title}</h1>
@@ -41,7 +41,7 @@ function Episode(props: Props) {
             </div>
           </div>
         </div>
-      </section>
+      </CardInfo>
     );
   } else {
     return (

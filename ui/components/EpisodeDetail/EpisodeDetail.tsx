@@ -36,7 +36,7 @@ function EpisodeDetail(props: Props) {
       <PlayerHub className="player-hub">
         <WatchArea episode={episode} />
         <EpisodeCard key={episode.id} episode={episode} detail={true}/>
-        <DetailContainer className="more-episodes" column padding="0 5rem">
+        <DetailContainer className="more-episodes" column>
           <h2>More {episode.show.title} Episodes:</h2>
           {episode.show.episodes.length < 3
             ? (

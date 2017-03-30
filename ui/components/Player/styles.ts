@@ -1,6 +1,18 @@
 import styled from 'styled-components';
+import Container from 'ui/styles/Container';
+import { media } from 'ui/styles/utils';
 
-const VideoJs = styled.div`
+export const PlayerContainer = styled(Container)`
+  padding: 0;
+  ${media.lg`
+    padding: ${props => props.padding ? props.padding :  '0 2.5rem'};
+  `}
+  ${media.xl`
+    padding: ${props => props.padding ? props.padding :  '0 5rem'};
+  `}
+`
+
+export const VideoJs = styled.div`
   #player {
     width: 100%;
     height: 100%;
@@ -29,8 +41,12 @@ const VideoJs = styled.div`
   .vjs-custom .vjs-control-bar {
     display: flex;
     align-items: flex-end;
-    height: 6rem;
+    height: 4rem;
     background-color: rgba(17,17,17,.7);
+
+    ${media.md`
+       height: 6rem;
+    `}
   }
 
   .vjs-custom .vjs-control {
@@ -39,19 +55,28 @@ const VideoJs = styled.div`
 
   .vjs-custom .vjs-button {
     padding: 0;
-    margin: 0 1rem;
+    margin: 0;
+    ${media.md`
+       margin: 0 .5rem;
+    `}
   }
 
   .vjs-custom .vjs-progress-control {
     position: absolute;
     left: 0;
     right: 0;
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
     height: .5rem;
     top: 1rem;
     padding: 0 5%;
     /*background-color: rgba(17,17,17,.7);*/
+    ${media.sm`
+      width: 80%;
+    `}
+    ${media.md`
+      width: 90%;
+    `}
   }
 
   .vjs-custom .vjs-slider {
@@ -77,6 +102,17 @@ const VideoJs = styled.div`
 
   .vjs-custom .vjs-control {
     display: flex;
+    &:before {
+      font-size: 1.2rem;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      align-self: center;
+
+      ${media.md`
+        font-size: 1.5rem;
+      `}
+    }
   }
 
   .vjs-custom .vjs-current-time,
@@ -94,7 +130,10 @@ const VideoJs = styled.div`
   .vjs-custom .vjs-current-time-display,
   .vjs-custom .vjs-duration-display {
     color: rgba(68,68,68,1);
-    font-size: 1.25rem;
+    font-size: .875rem;
+    ${media.md`
+      font-size: 1.25rem;
+    `}
   }
 
   .vjs-custom .vjs-duration { 
@@ -109,6 +148,10 @@ const VideoJs = styled.div`
     height: 100%;
   }
 
+  .vjs-custom .vjs-volume-menu-button.vjs-menu-button-inline .vjs-menu-content {
+    display: flex;
+  }
+
   .vjs-custom .vjs-volume-panel .vjs-volume-control.vjs-volume-horizontal {
     transition: visibility 1s,opacity 1s;
   }
@@ -120,10 +163,34 @@ const VideoJs = styled.div`
     transition: visibility 1s,opacity 1s;
   }
 
+  .vjs-custom .vjs-volume-bar {
+    display: flex;
+    margin: 0;
+  }
+
+  .vjs-custom .vjs-slider-horizontal {
+    
+  }
+
+  .vjs-custom .vjs-volume-level {
+    position: relative;
+  }
+
   .vjs-custom .vjs-slider-horizontal .vjs-volume-level:before {
     top: -.3em;
     right: -.5em;
   }
+
+  .vjs-custom .vjs-menu-button-inline .vjs-menu {
+    display: flex;
+    align-items: center
+  }
+
+  .vjs-menu-button-inline:hover .vjs-menu, .vjs-menu-button-inline:focus .vjs-menu, .vjs-menu-button-inline.vjs-slider-active .vjs-menu {
+    display: flex;
+    opacity: 1;
+    align-items: center;
+}
 
   .vjs-custom .vjs-spacer, .vjs-custom {
     display: flex;
@@ -225,5 +292,3 @@ const VideoJs = styled.div`
     }
   }  
 `;
-
-export default VideoJs;

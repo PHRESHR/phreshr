@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import ShowEntry from './styles';
+import { CardInfo, ShowEntry } from './styles';
 import { AspectRatio16x9 } from 'ui/styles/AspectRatios';
 
 interface Props {
@@ -19,7 +19,7 @@ interface Props {
 const ShowCard: React.SFC<Props> = ({ show, detail }) => {
   if (detail) {
     return (
-      <div className="show-view">
+      <CardInfo className="show-view">
         <section className="show-marquee">
           <div className="media">
             <AspectRatio16x9>
@@ -33,7 +33,7 @@ const ShowCard: React.SFC<Props> = ({ show, detail }) => {
             <p>{show.description}</p>
           </div>
         </section>
-      </div>
+      </CardInfo>
     );
   } else {
     return (

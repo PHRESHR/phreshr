@@ -39,8 +39,8 @@ function ShowDetail(props: Props) {
           <ShowCard key={show.id} show={show} detail={true}/>
         }
       </ShowLede>
-      <DetailContainer className="more-episodes" column padding="0 5rem">
-        <h2>More {show.title} Episodes:</h2>
+      <DetailContainer className="more-episodes" column>
+        <h2>More Episodes:</h2>
         {show.episodes.length < 3
             ? (
               <DetailContainer wrap padding="0" itemMargin="0.5rem">

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Player from 'ui/components/Player';
+import { WatchContainer } from './styles';
 
 interface Props {
   episode?;
@@ -10,7 +11,7 @@ interface Props {
   };
 }
 
-function PlayerHub(props: Props) {
+function WatchArea(props: Props) {
   const {episode, match} = props;
 
   const vjsOptions = {
@@ -31,10 +32,10 @@ function PlayerHub(props: Props) {
   };
 
   return (
-    <section className="watch-area">
+    <WatchContainer className="watch-area">
       <Player {...vjsOptions} />
-    </section>
+    </WatchContainer>
   );
 };
 
-export default PlayerHub;
+export default WatchArea;

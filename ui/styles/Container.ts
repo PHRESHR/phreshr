@@ -3,16 +3,16 @@ import { media } from 'ui/styles/utils';
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: ${props => props.justify};
   flex-wrap: wrap;
   width: 100%;
   max-width: ${props => props.maxWidth};
   margin: 0 auto;
-  padding: padding: ${props => props.padding ? props.padding :  '.375rem'};
+  padding: ${props => props.padding ? props.padding :  '.375rem'};
 
   ${media.sm`
-    padding: padding: ${props => props.padding ? props.padding :  '.5rem'};
+    padding: ${props => props.padding ? props.padding :  '.5rem'};
   `}
 
   ${media.md`
@@ -32,6 +32,9 @@ const Container = styled.div`
 
   .item {
     margin-right: ${props => props.itemMargin};
+    &:last-child {
+      margin-right: 0;
+    }
   }
 `;
 

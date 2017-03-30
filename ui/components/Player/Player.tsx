@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { compose, lifecycle, toClass } from 'recompose';
-import VideoJs from './styles';
+import { PlayerContainer, VideoJs } from './styles';
 
 let videoNode: HTMLVideoElement;
 function VideoPlayer() {
   return (
-    <div className="player-container">
+    <PlayerContainer className="player-container">
       <div id="player">
         <VideoJs className="episode-player">
           <div data-vjs-player>
@@ -13,7 +13,7 @@ function VideoPlayer() {
           </div>
         </VideoJs>
       </div>
-    </div>
+    </PlayerContainer>
   );
 };
 

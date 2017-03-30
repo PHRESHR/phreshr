@@ -17,6 +17,13 @@ const GridItem = styled.article`
   ${media.xl`
     flex: 0 0 calc(100% / 4 - 0.5rem);
   `}
+
+  h1 {
+    font-size: 1.2rem;
+    ${media.md`
+      font-size: 1.5rem;
+    `}
+  }
 `;
 
 export default GridItem;
