@@ -4,7 +4,7 @@ import GridItem from 'ui/styles/GridItem';
 
 export const CardInfo = styled.div`
   width: 100%;
-  
+
   .show-marquee {
     display: flex;
     flex-direction: column;
