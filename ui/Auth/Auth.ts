@@ -12,16 +12,26 @@ export default class Auth extends EventEmitter {
       redirectUrl: AUTH_CONFIG.callbackUrl,
       responseType: 'token id_token',
       audience: `https://${AUTH_CONFIG.domain}/userinfo`,
+      params: {
+        scope: 'openid profile',
+      },
     },
   });
 
+  public userProfile;
+
   constructor() {
     super();
-    this.handleAuthentication();
+    // Add callback Lock's `authenticated` event
+    this.lock.on('authenticated', this.setSession.bind(this));
+    // Add callback for Lock's `authorization_error` event
+    this.lock.on('authorization_error', error =>
+      console.log('Authentication Error', error));
     // binds functions to keep this context
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
     this.isAuthenticated = this.isAuthenticated.bind(this);
+    this.getProfile = this.getProfile.bind(this);
   }
 
   public login() {
@@ -29,17 +39,25 @@ export default class Auth extends EventEmitter {
     this.lock.show();
   }
 
-  public handleAuthentication() {
-    // Add callback Lock's `authenticated` event
-    this.lock.on('authenticated', this.setSession.bind(this));
-    // Add callback for Lock's `authorization_error` event
-    this.lock.on('authorization_error', error => console.log('Authentication Error', error));
+  getProfile(cb?) {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('Access token required for fetching profile');
+    }
+    this.lock.getUserInfo(accessToken, (err, profile) => {
+      if (profile) {
+        this.userProfile = profile;
+      }
+      cb(err, profile);
+    });
   }
 
   public setSession(authResult) {
     if (authResult && authResult.accessToken && authResult.idToken) {
       // Set the time that the access token will expire at
-      const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+      const expiresAt = JSON.stringify(
+        authResult.expiresIn * 1000 + new Date().getTime()
+      );
       localStorage.setItem('access_token', authResult.accessToken);
       localStorage.setItem('id_token', authResult.idToken);
       localStorage.setItem('expires_at', expiresAt);
@@ -65,4 +83,4 @@ export default class Auth extends EventEmitter {
     const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
   }
-};
+}

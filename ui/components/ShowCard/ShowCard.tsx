@@ -16,7 +16,8 @@ interface Props {
   detail?: boolean;
 }
 
-const ShowCard: React.SFC<Props> = ({ show, detail }) => {
+function ShowCard(props: Props) {
+  const { show, detail } = props;
   if (detail) {
     return (
       <CardInfo className="show-view">
@@ -46,6 +47,6 @@ const ShowCard: React.SFC<Props> = ({ show, detail }) => {
       </ShowEntry>
     );
   }
-};
+}
 
 export default ShowCard;

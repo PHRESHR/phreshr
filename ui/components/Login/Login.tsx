@@ -7,7 +7,7 @@ interface Props {}
 function Login(props: Props) {
   const {} = props;
   return null;
-};
+}
 
 const propTypes = {
   auth: React.PropTypes.shape({}),

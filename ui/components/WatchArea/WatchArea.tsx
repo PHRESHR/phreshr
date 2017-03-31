@@ -36,6 +36,6 @@ function WatchArea(props: Props) {
       <Player {...vjsOptions} />
     </WatchContainer>
   );
-};
+}
 
 export default WatchArea;

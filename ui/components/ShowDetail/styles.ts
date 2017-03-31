@@ -9,7 +9,7 @@ export const ShowLede = styled(Container)`
   flex-flow: row wrap;
   padding-bottom: .5rem;
   ${media.md`
-    padding-bottom: 5rem;
+    padding-bottom: 2.5rem;
   `}
 `;
 

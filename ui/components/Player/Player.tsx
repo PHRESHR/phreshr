@@ -15,7 +15,7 @@ function VideoPlayer() {
       </div>
     </PlayerContainer>
   );
-};
+}
 
 const componentLifecycle = lifecycle({
   async componentDidMount() {

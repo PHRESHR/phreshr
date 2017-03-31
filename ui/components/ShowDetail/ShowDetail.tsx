@@ -40,7 +40,7 @@ function ShowDetail(props: Props) {
         }
       </ShowLede>
       <DetailContainer className="more-episodes" column>
-        <h2>More Episodes:</h2>
+        <h2>Episodes:</h2>
         {show.episodes.length < 3
             ? (
               <DetailContainer wrap padding="0" itemMargin="0.5rem">
@@ -62,7 +62,7 @@ function ShowDetail(props: Props) {
       </DetailContainer>
     </div>
   );
-};
+}
 
 export default compose(
   graphql(SHOW_QUERY, {

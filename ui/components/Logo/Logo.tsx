@@ -10,6 +10,6 @@ function Logo() {
       </Link>
     </Branding>
   );
-};
+}
 
 export default Logo;

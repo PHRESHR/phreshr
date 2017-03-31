@@ -23,7 +23,7 @@ function ShowList(props: Props) {
       )}
     </ShowContainer>
   );
-};
+}
 
 export default compose(
   graphql(SHOWS_QUERY),

@@ -9,7 +9,7 @@ const Toolbar = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #222;
   width: 100%;
   height: 3.75rem;
   padding: 0.3125rem;

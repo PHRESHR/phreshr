@@ -32,7 +32,7 @@ function Featured(props: Props) {
       </AspectRatio5x2>
     </FeaturedContainer>
   );
-};
+}
 
 export default compose(
   graphql(FEATUREDS_QUERY),

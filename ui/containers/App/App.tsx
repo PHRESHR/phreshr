@@ -82,7 +82,7 @@ function App() {
       </Switch>
     </Canvas>
   );
-};
+}
 
 const componentLifecycle = lifecycle({
   componentWillMount() {

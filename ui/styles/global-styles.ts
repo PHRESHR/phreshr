@@ -20,7 +20,8 @@ export default injectGlobal`
     padding: 0;
   }
   body {
-    color: #111;
+    color: #fefefe;
+    background-color: #222;
     font-family: Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 16px;
   }

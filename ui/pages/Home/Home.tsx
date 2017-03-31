@@ -16,6 +16,6 @@ function Home() {
       <EpisodeList />
     </div>
   );
-};
+}
 
 export default Home;

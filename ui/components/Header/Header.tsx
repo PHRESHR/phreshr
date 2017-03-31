@@ -10,6 +10,6 @@ function Header() {
       <Nav />
     </Toolbar>
   );
-};
+}
 
 export default Header;

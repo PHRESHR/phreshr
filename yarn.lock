@@ -153,13 +153,13 @@
   dependencies:
     "@types/source-map" "*"
 
-"@types/videojs@^5.16.1":
-  version "5.16.1"
-  resolved "https://registry.yarnpkg.com/@types/videojs/-/videojs-5.16.1.tgz#5e5cf7d168df1f9932b5dc06aaed9e09f69d6e98"
+"@types/videojs@^5.16.2":
+  version "5.16.2"
+  resolved "https://registry.yarnpkg.com/@types/videojs/-/videojs-5.16.2.tgz#36c0f4f7005a492aa9980bee2e0c6591baa146f3"
 
-"@types/webpack@^2.2.13":
-  version "2.2.13"
-  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-2.2.13.tgz#551e6d6cf58927f1cd6052cf192912afee64e11c"
+"@types/webpack@^2.2.14":
+  version "2.2.14"
+  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-2.2.14.tgz#3970c56eac47013efc4e4b7f383fd59f60f50675"
   dependencies:
     "@types/node" "*"
     "@types/tapable" "*"
@@ -262,9 +262,9 @@ anymatch@^1.3.0:
     arrify "^1.0.0"
     micromatch "^2.1.5"
 
-apollo-client@^1.0.0-rc.2:
-  version "1.0.0-rc.8"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-1.0.0-rc.8.tgz#30105eb33f59ecab63f493177416d720ba0a8fd9"
+apollo-client@^1.0.0-rc.9:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-1.0.0.tgz#16fef4ecbe481641228a55c8013508f60fbe0b4f"
   dependencies:
     graphql "^0.9.1"
     graphql-anywhere "^3.0.1"
@@ -470,7 +470,7 @@ babel-code-frame@^6.16.0, babel-code-frame@^6.22.0:
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-babel-eslint@^7.2.0:
+babel-eslint@^7.2.1:
   version "7.2.1"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-7.2.1.tgz#079422eb73ba811e3ca0865ce87af29327f8c52f"
   dependencies:
@@ -794,9 +794,9 @@ babel-plugin-transform-strict-mode@^6.22.0:
     babel-runtime "^6.22.0"
     babel-types "^6.22.0"
 
-babel-preset-env@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.2.2.tgz#1dbc4d7f8a575691d301f45fa9b2f9698b1e3b92"
+babel-preset-env@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.3.2.tgz#08eabd2bf810c3678069f7e052323419f1448749"
   dependencies:
     babel-plugin-check-es2015-constants "^6.22.0"
     babel-plugin-syntax-trailing-function-commas "^6.22.0"
@@ -826,7 +826,6 @@ babel-preset-env@^1.2.2:
     babel-plugin-transform-exponentiation-operator "^6.22.0"
     babel-plugin-transform-regenerator "^6.22.0"
     browserslist "^1.4.0"
-    electron-to-chromium "^1.2.6"
     invariant "^2.2.2"
 
 babel-runtime@^6.18.0, babel-runtime@^6.20.0, babel-runtime@^6.22.0, babel-runtime@^6.9.2:
@@ -1417,9 +1416,9 @@ core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
-cors@^2.8.2:
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/cors/-/cors-2.8.2.tgz#3a6c31f5a398c87394e31555b627ea3523839080"
+cors@^2.8.3:
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/cors/-/cors-2.8.3.tgz#4cf78e1d23329a7496b2fc2225b77ca5bb5eb802"
   dependencies:
     object-assign "^4"
     vary "^1"
@@ -1693,7 +1692,7 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-electron-to-chromium@^1.2.6, electron-to-chromium@^1.2.7:
+electron-to-chromium@^1.2.7:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.2.tgz#b8ce5c93b308db0e92f6d0435c46ddec8f6363ab"
 
@@ -2081,9 +2080,9 @@ file-entry-cache@^2.0.0:
     flat-cache "^1.2.1"
     object-assign "^4.0.1"
 
-file-loader@0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-0.10.1.tgz#815034119891fc6441fb5a64c11bc93c22ddd842"
+file-loader@0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-0.11.0.tgz#af018f39c44617305f1ee92f850c7a65a4331616"
   dependencies:
     loader-utils "^1.0.2"
 
@@ -3933,6 +3932,10 @@ pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
 
+polished@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-1.0.1.tgz#4806866acbcf6b83d4e885c5da917f25ed946273"
+
 postcss-value-parser@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
@@ -4069,11 +4072,11 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-apollo@^1.0.0-rc.3:
-  version "1.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-1.0.0-rc.3.tgz#a1d613785d1f07dcf012d7cde4f2c3a0507ceb03"
+react-apollo@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-1.0.0.tgz#7fcc14adcc7aa4ca4d9e04ddedf50b8fb74daa91"
   dependencies:
-    apollo-client "^1.0.0-rc.2"
+    apollo-client "^1.0.0-rc.9"
     graphql-anywhere "^3.0.0"
     graphql-tag "^1.3.1"
     hoist-non-react-statics "^1.2.0"
@@ -4561,9 +4564,9 @@ source-list-map@~0.1.7:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-0.1.8.tgz#c550b2ab5427f6b3f21f5afead88c4f5587b2106"
 
-source-map-loader@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/source-map-loader/-/source-map-loader-0.2.0.tgz#aba0cf717a1d7ee29fc30f31cc0c441d78ea42ba"
+source-map-loader@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/source-map-loader/-/source-map-loader-0.2.1.tgz#48126be9230bd47fad05e46a8c3c2e3d2dabe507"
   dependencies:
     async "^0.9.0"
     loader-utils "~0.2.2"
@@ -5239,9 +5242,9 @@ videojs-contrib-ads@^4.2.5:
     browserify-versionify "^1.0.6"
     video.js "^5.10.1"
 
-videojs-dock@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/videojs-dock/-/videojs-dock-2.0.3.tgz#6296ebf96de9eeb7ae28e512b8381572dfecf05f"
+videojs-dock@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/videojs-dock/-/videojs-dock-2.1.0.tgz#4faa4947eebef8f9c2bf4b36275fd5327109ee73"
   dependencies:
     video.js "^5.5.3"
 

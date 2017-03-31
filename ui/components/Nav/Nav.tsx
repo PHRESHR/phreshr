@@ -11,6 +11,6 @@ function Nav() {
       <NavLink to="/oops" activeClassName="active">Oops</NavLink>
     </Navigation>
   );
-};
+}
 
 export default Nav;

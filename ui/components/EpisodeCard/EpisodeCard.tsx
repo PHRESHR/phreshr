@@ -62,6 +62,6 @@ function Episode(props: Props) {
       </CardEntry>
   );
   }
-};
+}
 
 export default Episode;

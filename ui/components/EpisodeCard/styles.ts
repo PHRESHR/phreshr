@@ -9,7 +9,7 @@ export const CardInfo = styled.section`
     padding-bottom: .5rem;
   }
   .episode-details {
-    background-color: #eee;
+    background-color: #111;
     padding: 2.5rem 0;
     position: relative;
   }
