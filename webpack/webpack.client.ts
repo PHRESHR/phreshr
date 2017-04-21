@@ -8,12 +8,12 @@ import * as webpack from 'webpack';
 
 import common from './common';
 
-const isProd = process.env.NODE_ENV === 'production';
+const isPROD = process.env.NODE_ENV === 'production';
 
 export default merge({}, common, {
   name: 'client',
   entry: {
-    client: isProd ? [
+    client: isPROD ? [
       './client',
     ] : [
       'react-hot-loader/patch',
@@ -22,10 +22,10 @@ export default merge({}, common, {
     ],
   },
   output: {
-    filename: `js/[name]${isProd ? '.[chunkhash:8]' : ''}.js`,
+    filename: `js/[name]${isPROD ? '.[chunkhash:8]' : ''}.js`,
   },
   plugins: [
-    ...(isProd
+    ...(isPROD
       ? [
         new AssetsPlugin({
           filename: 'assets.json',
@@ -80,7 +80,7 @@ export default merge({}, common, {
     }]),
     new WebpackMd5Hash(),
   ],
-  devtool: isProd ? 'source-map' : 'inline-source-map',
+  devtool: isPROD ? 'source-map' : 'inline-source-map',
   externals: {
     videojs: ' videojs',
   },

@@ -10,25 +10,26 @@ interface Props {
 }
 
 function Collapse(props: Props) {
-  const { title, children, toggleCollapsed, collapsed } = props;
+  const { children, toggleCollapsed, collapsed } = props;
   return (
-    <div>
-      <a href="javascript:void(e)" onClick={toggleCollapsed}>
-        { title }
-      </a>
+    <CollapseContainer>
+      <button onClick={toggleCollapsed}>
+        { !collapsed
+          ? <svg className="icon icon--cross"><use xlinkHref="#icon-cross" /></svg>
+          : <svg className="icon icon--menu"><use xlinkHref="#icon-menu" /></svg> }
+      </button>
       { !collapsed ?
         (
-          <div>
+          <div className="collapse-inner">
             {children}
           </div>
         ) : null
       }
-    </div>
+    </CollapseContainer>
   );
 }
 
 const propTypes = {
-  title: React.PropTypes.string.isRequired,
   children: React.PropTypes.node.isRequired,
 };
 

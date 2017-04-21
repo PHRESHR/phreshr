@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { aspectRatio, media } from 'ui/styles/utils';
 
- export const AspectRatio16x9 = styled.div`
+export const AspectRatio16x9 = styled.div`
   ${ aspectRatio(16, 9) }
 `;
 

@@ -7,7 +7,7 @@ const AsyncComponent = (getComponent: () => Promise<any>) =>
     public state = { Component: Async.Component };
 
     public componentDidMount() {
-      if (this.state.Component) { return; };
+      if (this.state.Component) { return; }
 
       getComponent().then(Component => {
         Async.Component = Component;

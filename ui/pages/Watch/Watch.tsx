@@ -14,6 +14,6 @@ function Watch(props: Props) {
   return (
     <EpisodeDetail id={match.params.id} />
   );
-};
+}
 
 export default Watch;

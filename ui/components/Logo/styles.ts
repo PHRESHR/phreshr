@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { media } from 'ui/styles/utils';
 
 const Branding = styled.div`
-  width: 60px;
+  width: 250px;
   ${media.md`
-    width: 50px;
+    width: 300px;
   `}
 `;
 

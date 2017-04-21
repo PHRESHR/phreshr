@@ -10,7 +10,7 @@ export const PlayerContainer = styled(Container)`
   ${media.xl`
     padding: ${props => props.padding ? props.padding :  '0 5rem'};
   `}
-`
+`;
 
 export const VideoJs = styled.div`
   #player {

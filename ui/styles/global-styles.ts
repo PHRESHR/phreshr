@@ -49,4 +49,12 @@ export default injectGlobal`
   li {
     list-style: none
   }
+  /* Helper Classes */
+  .hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
 `;

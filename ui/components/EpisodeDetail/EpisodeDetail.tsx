@@ -26,12 +26,13 @@ function EpisodeDetail(props: Props) {
         <meta property="og:url" content={`https://phreshr.com/watch/${episode.id}/${episode.uid}`} />
         <meta property="og:type" content="article" />
         <meta property="og:image" content={episode.thumbImageUrl} />
-
         <meta property="twitter:title" content={`${episode.show.title}: ${episode.title}`} />
         <meta property="twitter:description" content={episode.description} />
         <meta property="twitter:url" content={`https://phreshr.com/watch/${episode.id}/${episode.uid}`} />
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:image" content={episode.thumbImageUrl} />
+        <link rel="stylesheet" href="http://vjs.zencdn.net/6.0.0/video-js.css" />
+        <script src="http://vjs.zencdn.net/6.0.0/video.min.js" />
       </Helmet>
       <PlayerHub className="player-hub">
         <WatchArea episode={episode} />
@@ -55,12 +56,12 @@ function EpisodeDetail(props: Props) {
                   )}
                 </DetailContainer>
               )
-          }   
+          }
         </DetailContainer>
       </PlayerHub>
     </div>
   );
-};
+}
 
 export default compose(
   graphql(EPISODE_QUERY, {

@@ -1,3 +1,4 @@
+import 'isomorphic-fetch';
 import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
@@ -5,26 +6,22 @@ import * as compression from 'compression';
 import * as morgan from 'morgan';
 import * as dotenv from 'dotenv';
 
-import renderMiddleware from './middleware/render';
+import { Context } from './interfaces';
+import render from './render';
 
 dotenv.config({ silent: true });
 
 const {
   ENV = process.env.NODE_ENV || 'development',
+  HOST = '0.0.0.0',
   PORT = 8080,
 } = process.env;
 
-const isProd = ENV === 'production';
+const isPROD = process.env.NODE_ENV === 'production';
 
 const app: express.Express = express();
 
-// Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
-// user agent is not known.
-// -----------------------------------------------------------------------------
-global['navigator'] = global['navigator'] || {};
-global['navigator'].userAgent = global['navigator'].userAgent || 'all';
-
-if (isProd) {
+if (isPROD) {
   app.use(compression());
 } else {
   const {
@@ -41,11 +38,24 @@ app
   .set('port', PORT)
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
-  .use(morgan(isProd ? 'combined' : 'dev'))
+  .use(morgan(isPROD ? 'combined' : 'dev'))
   .use(express.static(path.resolve(__dirname, '../build')))
   .use(express.static(path.join(__dirname, '../build/static'), { maxAge: 86400000 }))
-  .use(renderMiddleware);
+  .get ('*', async ( req: express.Request, res: express.Response) => {
+    const context: Context = {};
+    let html;
+    try {
+      html = await render( req, res, context );
+    } catch (error) {
+      console.log(error);
+      return res.sendStatus(500);
+    }
+    if (context.url) {
+      return res.redirect (context.status || 301, context.url);
+    }
+    res.status (context.status || 200).send(html);
+  });
 
 app.listen(PORT, () => console.log(
-  `App Server is now running on http://localhost:${PORT}`,
+  `App Server is now running on http://${HOST}:${PORT}`,
 ));

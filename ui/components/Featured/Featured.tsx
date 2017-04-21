@@ -16,6 +16,7 @@ interface Props {
 function Featured(props: Props) {
   const { Featured, allFeatureds } = props;
   const featured = allFeatureds[0];
+  console.log(featured);
   const inlineStyle = {
     backgroundImage: `url(${featured.episode.featureImageUrl})`,
     backgroundSize: 'cover',
@@ -24,12 +25,13 @@ function Featured(props: Props) {
   };
   return (
     <FeaturedContainer>
-      <AspectRatio5x2 className="featured-container">
+      <div className="preview" style={inlineStyle} />
+      <div className="featured-info">
+        <h3>{featured.episode.show.title} | <span>Season.{featured.episode.season}</span></h3>
         <Link to={`/watch/${featured.episode.id}/${featured.episode.uid}`}>
-          <div className="preview" style={inlineStyle} />
-          {featured.episode.title}
+          <h1>{featured.episode.title}</h1>
         </Link>
-      </AspectRatio5x2>
+      </div>
     </FeaturedContainer>
   );
 }

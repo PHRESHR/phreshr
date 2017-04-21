@@ -1,10 +1,16 @@
 declare var VENDOR_BUNDLE: boolean;
 declare var CLIENT_BUNDLE: boolean;
 
+declare const ENV: string;
+declare const DEV: boolean;
+declare const PROD: boolean;
+declare const CLIENT: boolean;
+declare const SERVER: boolean;
+
 declare var videojs;
 
 declare module '*.svg' {
-  const content: string
+  const content: any;
   export default content;
 }
 

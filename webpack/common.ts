@@ -3,7 +3,7 @@ import * as webpack from 'webpack';
 import * as dotenv from 'dotenv';
 
 dotenv.config({ silent: true });
-const isProd = process.env.NODE_ENV === 'production';
+const isPROD = process.env.NODE_ENV === 'production';
 
 export default {
   output: {
@@ -41,7 +41,7 @@ export default {
             loader: 'url-loader',
             options: {
               limit: 10000,
-              name: `static/images/[name]${isProd ? '.[hash:8]' : ''}.[ext]`,
+              name: `static/images/[name]${isPROD ? '.[hash:8]' : ''}.[ext]`,
             },
           },
         ],
@@ -70,5 +70,5 @@ export default {
     },
     extensions: ['.tsx', '.ts', '.js', '.css'],
   },
-  bail: isProd,
+  bail: isPROD,
 };

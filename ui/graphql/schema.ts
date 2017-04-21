@@ -49,6 +49,38 @@ export interface ShowQuery {
   Show: ShowInfoFragment & ShowEpisodesFragment;
 }
 
+export interface SignInMutationVariables {
+  idToken: string;
+}
+
+export interface SignInMutation {
+  signinUser: {
+    token: string | null,
+    user: CurrentUserObjectFragment,
+  };
+}
+
+export interface CreateUserMutationVariables {
+  idToken: string;
+  name: string;
+}
+
+export interface CreateUserMutation {
+  createUser: CurrentUserObjectFragment;
+}
+
+export interface CurrentUserQuery {
+  user: CurrentUserObjectFragment;
+}
+
+export interface UserQueryVariables {
+  auth0UserId: string | null;
+}
+
+export interface UserQuery {
+  User: CurrentUserObjectFragment;
+}
+
 export interface EpisodeInfoFragment {
   id: string;
   uid: string | null;
@@ -72,6 +104,10 @@ export interface FeaturedInfoFragment {
     title: string,
     description: string,
     featureImageUrl: string | null,
+    season: number,
+    show: {
+      title: string,
+    } | null,
   } | null;
 }
 
@@ -92,5 +128,10 @@ export interface ShowEpisodesFragment {
     description: string,
     thumbImageUrl: string,
   } > | null;
+}
+
+export interface CurrentUserObjectFragment {
+  id: string;
+  name: string;
 }
 /* tslint:enable */

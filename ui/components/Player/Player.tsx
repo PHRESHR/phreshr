@@ -18,9 +18,9 @@ function VideoPlayer() {
 }
 
 const componentLifecycle = lifecycle({
-  async componentDidMount() {
+  componentDidMount() {
     // instantiate video.js
-    this.player = await videojs(videoNode, this.props, function onPlayerReady() {
+    this.player = videojs(videoNode, this.props, function onPlayerReady() {
       // console.log(this.player());
       console.log('onPlayerReady', this);
       this.addClass('vjs-custom');
