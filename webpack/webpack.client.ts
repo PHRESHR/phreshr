@@ -1,8 +1,10 @@
+import * as path from 'path';
 import * as SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
 import * as AssetsPlugin from 'assets-webpack-plugin';
 import * as CompressionPlugin from 'compression-webpack-plugin';
 import * as CopyWebpackPlugin from 'copy-webpack-plugin';
 import * as WebpackMd5Hash from 'webpack-md5-hash';
+import * as BabiliPlugin from 'babili-webpack-plugin';
 import * as merge from 'webpack-merge';
 import * as webpack from 'webpack';
 
@@ -22,20 +24,17 @@ export default merge({}, common, {
     ],
   },
   output: {
-    filename: `js/[name]${isPROD ? '.[chunkhash:8]' : ''}.js`,
+    filename: `[name]${isPROD ? '.[chunkhash:8]' : ''}.js`,
   },
   plugins: [
     ...(isPROD
       ? [
-        new AssetsPlugin({
-          filename: 'assets.json',
-          path: common.output.path,
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-          compress: {
-            warnings: false,
-          },
-        }),
+        new BabiliPlugin({removeConsole: true}),
+        // new webpack.optimize.UglifyJsPlugin({
+        //   compress: {
+        //     warnings: false,
+        //   },
+        // }),
         new CompressionPlugin({
           asset: '[path].gz[query]',
           algorithm: 'gzip',
@@ -44,7 +43,7 @@ export default merge({}, common, {
           minRatio: 0.8,
         }),
         new SWPrecacheWebpackPlugin({
-          cacheId: 'spottieottiedopaliscious',
+          cacheId: 'a02bac8c-a7af-4098-a53e-146fa8797dc9',
           filename: 'service-worker.js',
           // maximumFileSizeToCacheInBytes: 4194304,
           // mergeStaticsConfig: true,
@@ -68,15 +67,22 @@ export default merge({}, common, {
           ],
         }),
       ]
-      : [new webpack.HotModuleReplacementPlugin()]
+      : [
+        new webpack.HotModuleReplacementPlugin()
+      ]
     ),
+    new AssetsPlugin({
+      filename: 'assets.json',
+      path: path.resolve(__dirname, '../build'),
+      prettyPrint: true,
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: ({ resource }) => /node_modules/.test(resource),
+      minChunks: module => /node_modules/.test(module.resource),
     }),
     new CopyWebpackPlugin([{
       from: 'ui/static',
-      to: 'static',
+      to: '../',
     }]),
     new WebpackMd5Hash(),
   ],

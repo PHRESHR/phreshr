@@ -41,7 +41,7 @@ function Html(props: Props) {
         { isPROD && (
             <script dangerouslySetInnerHTML={{ __html: `
             if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.register('/service-worker.js');
+              navigator.serviceWorker.register('/assets/service-worker.js');
             }
           ` }} />
           )

@@ -31,8 +31,8 @@ function EpisodeDetail(props: Props) {
         <meta property="twitter:url" content={`https://phreshr.com/watch/${episode.id}/${episode.uid}`} />
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:image" content={episode.thumbImageUrl} />
-        <link rel="stylesheet" href="http://vjs.zencdn.net/6.0.0/video-js.css" />
-        <script src="http://vjs.zencdn.net/6.0.0/video.min.js" />
+        <link rel="stylesheet" href="https://vjs.zencdn.net/6.0.0/video-js.css" />
+        <script src="https://vjs.zencdn.net/6.0.0/video.min.js" />
       </Helmet>
       <PlayerHub className="player-hub">
         <WatchArea episode={episode} />

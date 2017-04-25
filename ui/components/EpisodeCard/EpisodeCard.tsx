@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { Image } from 'cloudinary-react';
 import { CardInfo, CardEntry } from './styles';
 import { AspectRatio16x9 } from 'ui/styles/AspectRatios';
 
@@ -49,6 +50,7 @@ function Episode(props: Props) {
         <Link to={`/watch/${episode.id}/${episode.uid}`}>
           <AspectRatio16x9>
             <div>
+              {/*<Image cloudName="phreshr-media" publicId={episode.thumbImageUrl} width="600" crop="scale" type="fetch" />*/}
               <img src={episode.thumbImageUrl} alt={episode.title}/>
             </div>
           </AspectRatio16x9>

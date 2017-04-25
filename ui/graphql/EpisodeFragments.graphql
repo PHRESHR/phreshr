@@ -4,6 +4,7 @@ fragment EpisodeInfo on Episode {
   title
   description
   thumbImageUrl
+  imagePublicId
   videoUrl
   season
   createdAt

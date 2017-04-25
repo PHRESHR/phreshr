@@ -1,4 +1,3 @@
-import 'isomorphic-fetch';
 import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
@@ -39,8 +38,8 @@ app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
   .use(morgan(isPROD ? 'combined' : 'dev'))
-  .use(express.static(path.resolve(__dirname, '../build')))
-  .use(express.static(path.join(__dirname, '../build/static'), { maxAge: 86400000 }))
+  // .use(express.static(path.resolve(__dirname, '/static')))
+  .use(express.static(path.join(__dirname, '/static/assets'), { maxAge: 86400000 }))
   .get ('*', async ( req: express.Request, res: express.Response) => {
     const context: Context = {};
     let html;

@@ -87,6 +87,7 @@ export interface EpisodeInfoFragment {
   title: string;
   description: string;
   thumbImageUrl: string;
+  imagePublicId: string | null;
   videoUrl: string;
   season: number;
   createdAt: String | null;
@@ -104,6 +105,7 @@ export interface FeaturedInfoFragment {
     title: string,
     description: string,
     featureImageUrl: string | null,
+    imagePublicId: string | null,
     season: number,
     show: {
       title: string,
@@ -127,6 +129,7 @@ export interface ShowEpisodesFragment {
     title: string,
     description: string,
     thumbImageUrl: string,
+    imagePublicId: string | null,
   } > | null;
 }
 

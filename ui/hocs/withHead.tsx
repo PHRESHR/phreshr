@@ -16,6 +16,7 @@ export default Comp => enhance(props => {
     <div>
       <Helmet>
         <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="React starter for building universal apps with Typescript, Webpack 2, Apollo" />

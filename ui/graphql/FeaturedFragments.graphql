@@ -6,6 +6,7 @@ fragment FeaturedInfo on Featured {
     title
     description
     featureImageUrl
+    imagePublicId
     season
     show {
       title

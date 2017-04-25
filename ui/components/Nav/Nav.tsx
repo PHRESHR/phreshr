@@ -7,7 +7,6 @@ function Nav() {
     <Navigation>
       <NavLink exact to="/" activeClassName="active">Home</NavLink>
       <NavLink to="/shows" activeClassName="active">Shows</NavLink>
-      <NavLink to="/about" activeClassName="active">About</NavLink>
     </Navigation>
   );
 }

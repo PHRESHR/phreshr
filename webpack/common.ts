@@ -7,7 +7,7 @@ const isPROD = process.env.NODE_ENV === 'production';
 
 export default {
   output: {
-    path: path.resolve(__dirname, '../build'),
+    path: path.resolve(__dirname, '../build/static/assets'),
     publicPath: '/',
   },
   module: {
@@ -41,7 +41,7 @@ export default {
             loader: 'url-loader',
             options: {
               limit: 10000,
-              name: `static/images/[name]${isPROD ? '.[hash:8]' : ''}.[ext]`,
+              name: `[path][name]${isPROD ? '.[hash:8]' : ''}.[ext]`,
             },
           },
         ],

@@ -5,11 +5,11 @@ import Featured from 'ui/components/Featured';
 import EpisodeList from 'ui/components/EpisodeList';
 import ShowList from 'ui/components/ShowList';
 import Collapse from 'ui/components/Collapse';
-import { CollapsedContainer } from './styles';
+import { HomeContainer } from './styles';
 
 function Home() {
   return (
-    <div>
+    <HomeContainer>
       <Helmet>
         <title>Home</title>
       </Helmet>
@@ -18,7 +18,7 @@ function Home() {
         <EpisodeList />
       </Collapse>
       <ShowList />
-    </div>
+    </HomeContainer>
   );
 }
 

@@ -5,7 +5,7 @@ import { media } from 'ui/styles/utils';
 const Canvas = styled(Container)`
   flex-direction: column;
   height: 100%;
-  padding: 0;
+  padding: 5rem 0;
 `;
 
 export default Canvas;

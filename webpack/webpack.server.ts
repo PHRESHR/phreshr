@@ -1,3 +1,4 @@
+import * as path from 'path';
 import * as nodeExternals from 'webpack-node-externals';
 import * as merge from 'webpack-merge';
 import * as webpack from 'webpack';
@@ -15,7 +16,7 @@ export default merge({}, common, {
   },
   output: {
     filename: 'server.js',
-    path: common.output.path,
+    path: path.resolve(__dirname, '../build'),
     publicPath: common.output.publicPath,
     libraryTarget: 'commonjs2',
   },
@@ -25,12 +26,14 @@ export default merge({}, common, {
       CLIENT_BUNDLE: JSON.stringify(
         isPROD
           ? require('../build/assets.json').client.js
-          : '/js/client.js'),
+          : '/assets/client.js'),
       VENDOR_BUNDLE: JSON.stringify(
         isPROD
           ? require('../build/assets.json').vendor.js
-          : '/js/vendor.js'),
+          : '/assets/vendor.js'),
     }),
   ],
-  externals: [nodeExternals()],
+  externals: [
+    nodeExternals(),
+  ],
 });

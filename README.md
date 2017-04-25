@@ -44,3 +44,9 @@ $ NODE_ENV=production npm run build && npm start
 ```bash
 $ apollo-codegen introspect-schema https://api.graph.cool/simple/v1/cixm67lmh1yjd0177j5cwt47t --output schema.json
 ```
+
+- Deployed url
+
+```bash
+https://phreshr-dev-ninwmvtiom.now.sh/
+```

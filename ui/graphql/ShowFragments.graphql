@@ -15,5 +15,6 @@ fragment ShowEpisodes on Show {
     title
     description
     thumbImageUrl
+    imagePublicId
   }
 }

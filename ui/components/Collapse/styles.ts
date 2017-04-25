@@ -7,7 +7,6 @@ const CollapseContainer = styled.div`
   display: flex;
   align-items: flex-end;
   width: 100%;
-  height: 100%;
   z-index: 1;
 
   button {
@@ -36,7 +35,7 @@ const CollapseContainer = styled.div`
     display: flex;
     align-items: flex-end;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(0,0,0,.75);
   }
   ${media.md``}
