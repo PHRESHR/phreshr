@@ -1,0 +1,10 @@
+{
+  "name": "phreshr-dev",
+  "alias": "phreshr",
+  "files": [
+    "package.json",
+    "build"
+  ],
+  "dotenv": true,
+  "public": true
+}

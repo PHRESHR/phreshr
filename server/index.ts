@@ -38,7 +38,7 @@ app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
   .use(morgan(isPROD ? 'combined' : 'dev'))
-  // .use(express.static(path.resolve(__dirname, '/static')))
+  .use(express.static(path.join(__dirname, '/static'), { maxAge: 86400000 }))
   .use(express.static(path.join(__dirname, '/static/assets'), { maxAge: 86400000 }))
   .get ('*', async ( req: express.Request, res: express.Response) => {
     const context: Context = {};

@@ -1,5 +1,6 @@
 .awcache/
 .vscode/
+build/
 dist/
 node_modules/
 
@@ -13,5 +14,3 @@ node_modules/
 /npm-debug.log
 /yarn-error.log
 /stats.json
-
-/now.json

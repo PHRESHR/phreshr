@@ -26,11 +26,11 @@ export default merge({}, common, {
       CLIENT_BUNDLE: JSON.stringify(
         isPROD
           ? require('../build/assets.json').client.js
-          : '/assets/client.js'),
+          : '/client.js'),
       VENDOR_BUNDLE: JSON.stringify(
         isPROD
           ? require('../build/assets.json').vendor.js
-          : '/assets/vendor.js'),
+          : '/vendor.js'),
     }),
   ],
   externals: [

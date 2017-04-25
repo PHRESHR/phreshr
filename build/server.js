@@ -21,7 +21,7 @@ module.exports =
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5a2f24b7ee59e464aef9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "36cb5f877481f22d9c87"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1106,8 +1106,8 @@ const morgan = __webpack_require__(18);
 const dotenv = __webpack_require__(9);
 const render_1 = __webpack_require__(14);
 dotenv.config({ silent: true });
-const { ENV = "development" || 'development', HOST = '0.0.0.0', PORT = 8080, } = process.env;
-const isPROD = "development" === 'production';
+const { ENV = "production" || 'development', HOST = '0.0.0.0', PORT = 8080, } = process.env;
+const isPROD = "production" === 'production';
 const app = express();
 if (isPROD) {
     app.use(compression());
@@ -1123,6 +1123,7 @@ app
     .use(bodyParser.urlencoded({ extended: true }))
     .use(bodyParser.json())
     .use(morgan(isPROD ? 'combined' : 'dev'))
+    .use(express.static(path.join(__dirname, '/static'), { maxAge: 86400000 }))
     .use(express.static(path.join(__dirname, '/static/assets'), { maxAge: 86400000 }))
     .get('*', (req, res) => __awaiter(this, void 0, void 0, function* () {
     const context = {};
@@ -1486,7 +1487,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(0);
 const react_helmet_1 = __webpack_require__(11);
 const serialize = __webpack_require__(62);
-const isPROD = "development" === 'production';
+const isPROD = "production" === 'production';
 __webpack_require__(12);
 function Html(props) {
     const { html, state, styles } = props;
@@ -1513,8 +1514,8 @@ function Html(props) {
             }
           ` } })),
             React.createElement("script", { dangerouslySetInnerHTML: { __html: `window.__APOLLO_STATE__ = ${serialize(state)}` } }),
-            React.createElement("script", { src: `${"/assets/vendor.js"}` }),
-            React.createElement("script", { src: `${"/assets/client.js"}` }))));
+            React.createElement("script", { src: `${"/vendor.4bb1f6ff.js"}` }),
+            React.createElement("script", { src: `${"/client.1e0dd2cc.js"}` }))));
 }
 exports.default = Html;
 
@@ -1759,7 +1760,7 @@ const path = __webpack_require__(5);
 const webpack = __webpack_require__(8);
 const dotenv = __webpack_require__(9);
 dotenv.config({ silent: true });
-const isPROD = "development" === 'production';
+const isPROD = "production" === 'production';
 exports.default = {
     output: {
         path: path.resolve(__dirname, '../build/static/assets'),
@@ -1809,7 +1810,7 @@ exports.default = {
     },
     plugins: [
         new webpack['EnvironmentPlugin']({
-            NODE_ENV: JSON.stringify("development") || 'development',
+            NODE_ENV: JSON.stringify("production") || 'development',
             GRAPHQL_ENDPOINT: JSON.stringify("https://api.graph.cool/simple/v1/cixm67lmh1yjd0177j5cwt47t"),
             GA_TRACKING_ID: JSON.stringify("UA-40660556-1"),
             AUTH0_CLIENT_ID: JSON.stringify("j3pmDdwu0lm0llytEVxiX0pCiwQpNTzu"),
@@ -1846,7 +1847,7 @@ const BabiliPlugin = __webpack_require__(55);
 const merge = __webpack_require__(67);
 const webpack = __webpack_require__(8);
 const common_1 = __webpack_require__(51);
-const isPROD = "development" === 'production';
+const isPROD = "production" === 'production';
 exports.default = merge({}, common_1.default, {
     name: 'client',
     entry: {

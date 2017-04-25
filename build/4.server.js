@@ -13,7 +13,7 @@ function About() {
     return (React.createElement("div", null,
         React.createElement(react_helmet_1.Helmet, null,
             React.createElement("title", null, "About")),
-        React.createElement("h1", null, "About PHRESHR")));
+        React.createElement("h1", null, "About")));
 }
 exports.default = About;
 
