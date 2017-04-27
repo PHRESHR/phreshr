@@ -14,6 +14,7 @@
       "node_modules/@types"
     ],
     "types": [
+      "fb",
       "isomorphic-fetch",
       "node",
       "react-helmet",

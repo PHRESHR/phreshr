@@ -1,5 +1,7 @@
 import * as React from 'react';
-import EpisodeDetail from 'ui/components/EpisodeDetail';
+import EpisodeDetail from 'ui/containers/EpisodeDetail';
+import ScrollToTop from 'ui/components/ScrollToTop';
+import { WatchContainer } from './styles';
 
 interface Props {
   match: {
@@ -12,7 +14,10 @@ interface Props {
 function Watch(props: Props) {
   const { match } = props;
   return (
-    <EpisodeDetail id={match.params.id} />
+    <WatchContainer>
+      <ScrollToTop />
+      <EpisodeDetail id={match.params.id} />
+    </WatchContainer>
   );
 }
 

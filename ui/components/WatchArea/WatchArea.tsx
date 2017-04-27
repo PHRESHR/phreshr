@@ -15,8 +15,10 @@ function WatchArea(props: Props) {
   const {episode, match} = props;
 
   const vjsOptions = {
-    autoplay: false,
+    autoplay: true,
+    preload: 'auto',
     controls: true,
+    poster: `${episode.thumbImageUrl}`,
     aspectRatio: '16:9',
     sources: [{
       src: `${episode.videoUrl}`,

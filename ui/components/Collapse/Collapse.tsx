@@ -1,24 +1,33 @@
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import { compose, pure, setPropTypes, withHandlers, withState } from 'recompose';
+import * as anime from 'animejs';
 import CollapseContainer from './styles';
 
 interface Props {
   title;
   children;
-  toggleCollapsed;
-  collapsed;
+  togglePanel;
+  iscollapsed;
 }
 
 function Collapse(props: Props) {
-  const { children, toggleCollapsed, collapsed } = props;
+  const { children, togglePanel, iscollapsed } = props;
+
+  // const triangleAnim = anime({
+  //   targets: triangle,
+  //   translateX: xOff - triangleOff / 2,
+  //   elasticity: animElasticity,
+  //   duration: animDuration
+  // });
   return (
     <CollapseContainer>
-      <button onClick={toggleCollapsed}>
-        { !collapsed
+      <button onClick={togglePanel}>
+        { !iscollapsed
           ? <svg className="icon icon--cross"><use xlinkHref="#icon-cross" /></svg>
           : <svg className="icon icon--menu"><use xlinkHref="#icon-menu" /></svg> }
       </button>
-      { !collapsed ?
+      { !iscollapsed ?
         (
           <div className="collapse-inner">
             {children}
@@ -29,18 +38,13 @@ function Collapse(props: Props) {
   );
 }
 
-const propTypes = {
-  children: React.PropTypes.node.isRequired,
-};
-
 export default compose(
-  withState('collapsed', 'setCollapsed', true),
+  withState('iscollapsed', 'setState', true),
   withHandlers({
-    toggleCollapsed: ({ setCollapsed }) => e => {
-      e.preventDefault();
-      setCollapsed(v => !v);
+    togglePanel: ({ setState }) => event => {
+      event.preventDefault();
+      setState(view => !view);
     },
   }),
-  setPropTypes(propTypes),
   pure,
 )(Collapse);

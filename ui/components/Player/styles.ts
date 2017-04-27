@@ -2,14 +2,8 @@ import styled from 'styled-components';
 import Container from 'ui/styles/Container';
 import { media } from 'ui/styles/utils';
 
-export const PlayerContainer = styled(Container)`
+export const PlayerContainer = styled(Container) `
   padding: 0;
-  ${media.lg`
-    padding: ${props => props.padding ? props.padding :  '0 2.5rem'};
-  `}
-  ${media.xl`
-    padding: ${props => props.padding ? props.padding :  '0 5rem'};
-  `}
 `;
 
 export const VideoJs = styled.div`
@@ -20,6 +14,72 @@ export const VideoJs = styled.div`
 
   .vjs-custom.video-js {
     display: flex;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+  }
+
+  .vjs-custom .vjs-control-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dfe2e9;
+    width: 90vw;
+    bottom: 7vw;
+    padding: 0 1rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+  }
+
+  .vjs-custom .vjs-button {
+    color: #8490a0;
+    padding: 0;
+    margin: 0;
+
+    /*&:hover {
+      color: #FDE74C;
+    }*/
+  }
+
+  .vjs-custom .vjs-button > .vjs-icon-placeholder:before {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 700;
+  }
+
+  .vjs-custom .vjs-play-progress {
+    background-color: #FDE74C;
+  }
+
+  .vjs-custom .vjs-slider {
+    background: rgba(35,35,35,.5);
+    align-self: center;
+  }
+
+  .vjs-custom .vjs-load-progress div {
+    background: rgba(68,68,68,.75);
+  }
+
+  .vjs-custom .vjs-progress-control .vjs-progress-holder,
+  .vjs-custom .vjs-progress-control:hover .vjs-progress-holder {
+    font-size: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .vjs-custom .vjs-time-control {
+    color: #8490a0;
+    font-size: 1rem;
+    line-height: 2;
+    font-weight: 700;
+  }
+
+  .vjs-custom .vjs-current-time, .vjs-no-flex .vjs-current-time {
+    display: block;
+  }
+
+  /*.vjs-custom.video-js {
+    display: flex;
+    width: 100%;
+    height: 100%;
     color: #fff;
   }
 
@@ -41,8 +101,11 @@ export const VideoJs = styled.div`
   .vjs-custom .vjs-control-bar {
     display: flex;
     align-items: flex-end;
+    background-color: #dfe2e9;
+    width: 90vw;
     height: 4rem;
-    background-color: rgba(17,17,17,.7);
+    bottom: 3vw;
+    margin: 0 auto;
 
     ${media.md`
        height: 6rem;
@@ -70,7 +133,6 @@ export const VideoJs = styled.div`
     height: .5rem;
     top: 1rem;
     padding: 0 5%;
-    /*background-color: rgba(17,17,17,.7);*/
     ${media.sm`
       width: 80%;
     `}
@@ -136,7 +198,7 @@ export const VideoJs = styled.div`
     `}
   }
 
-  .vjs-custom .vjs-duration { 
+  .vjs-custom .vjs-duration {
     right: 1rem;
   }
 
@@ -168,9 +230,7 @@ export const VideoJs = styled.div`
     margin: 0;
   }
 
-  .vjs-custom .vjs-slider-horizontal {
-    
-  }
+  .vjs-custom .vjs-slider-horizontal {}
 
   .vjs-custom .vjs-volume-level {
     position: relative;
@@ -186,7 +246,9 @@ export const VideoJs = styled.div`
     align-items: center
   }
 
-  .vjs-menu-button-inline:hover .vjs-menu, .vjs-menu-button-inline:focus .vjs-menu, .vjs-menu-button-inline.vjs-slider-active .vjs-menu {
+  .vjs-menu-button-inline:hover .vjs-menu,
+  .vjs-menu-button-inline:focus .vjs-menu,
+  .vjs-menu-button-inline.vjs-slider-active .vjs-menu {
     display: flex;
     opacity: 1;
     align-items: center;
@@ -202,14 +264,26 @@ export const VideoJs = styled.div`
     line-height: 1.67;
   }
 
-  .vjs-custom .vjs-control:focus, 
-  .vjs-custom .vjs-control:focus:before, 
+  .vjs-custom .vjs-control:focus,
+  .vjs-custom .vjs-control:focus:before,
   .vjs-custom .vjs-control:hover:before {
     text-shadow: none;
     outline: none;
   }
 
-  /* VideoJs Dock styles */
+  .vjs-custom .vjs-poster {
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .episode-player {
+    position: relative;
+    width: 100%;
+    flex: 0 0 100%;
+    order: 1;
+    overflow: hidden;
+  }
+
   .vjs-custom .vjs-dock-info, .vjs-custom .vjs-dock-shelf {
     font-family: Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
     pointer-events: none;
@@ -253,15 +327,6 @@ export const VideoJs = styled.div`
     letter-spacing: 0.0625rem
   }
 
-  .episode-player {
-    position: relative;
-    width: 100%;
-    flex: 0 0 100%;
-    order: 1;
-    overflow: hidden;
-  }
-
-  /* Video.js Playlist UI */
   .vjs-playlist {
     color: #fff;
     transition: all .2s ease;
@@ -290,5 +355,5 @@ export const VideoJs = styled.div`
       padding-left: 0;
       padding-right: 0;
     }
-  }  
+  }*/
 `;

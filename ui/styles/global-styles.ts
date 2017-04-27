@@ -38,7 +38,7 @@ export default injectGlobal`
     letter-spacing: 0.2rem;
     margin: 0.875rem 0;
   }
-  p { 
+  p {
     line-height: 1.6;
     margin: 0;
   }

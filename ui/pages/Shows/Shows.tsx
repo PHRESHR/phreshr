@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
-import ShowList from 'ui/components/ShowList';
+import ShowList from 'ui/containers/ShowList';
 
 function Shows() {
   return (

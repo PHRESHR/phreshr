@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { compose, lifecycle, toClass } from 'recompose';
+import * as videojs from 'video.js';
 import { PlayerContainer, VideoJs } from './styles';
 
 let videoNode: HTMLVideoElement;
@@ -9,7 +10,10 @@ function VideoPlayer() {
       <div id="player">
         <VideoJs className="episode-player">
           <div data-vjs-player>
-            <video id="videoPlayer" ref={ node => videoNode = node } className="video-js vjs-default-skin" />
+            <video
+              id="videoPlayer"
+              ref={node => videoNode = node}
+              className="video-js vjs-default-skin" />
           </div>
         </VideoJs>
       </div>
@@ -22,7 +26,7 @@ const componentLifecycle = lifecycle({
     // instantiate video.js
     this.player = videojs(videoNode, this.props, function onPlayerReady() {
       // console.log(this.player());
-      console.log('onPlayerReady', this);
+      // console.log('onPlayerReady', this);
       this.addClass('vjs-custom');
     });
   },

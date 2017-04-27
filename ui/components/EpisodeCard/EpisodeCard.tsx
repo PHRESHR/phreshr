@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from 'cloudinary-react';
+import { ShareButtons, ShareCounts, generateShareIcon } from 'react-share';
 import { CardInfo, CardEntry } from './styles';
 import { AspectRatio16x9 } from 'ui/styles/AspectRatios';
 
@@ -21,6 +22,11 @@ interface Props {
 
 function Episode(props: Props) {
   const { episode, detail } = props;
+  const { FacebookShareButton, TwitterShareButton } = ShareButtons;
+  const { FacebookShareCount } = ShareCounts;
+  const FacebookIcon = generateShareIcon('facebook');
+  const TwitterIcon = generateShareIcon('twitter');
+  console.log(location);
   if (detail) {
     return (
       <CardInfo className="episode-info">
@@ -28,6 +34,11 @@ function Episode(props: Props) {
           <h3>{episode.show.title}</h3>
           <h1>{episode.title}</h1>
         </header>
+        <div className="social-sharing" style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+          <div className="fb-share-button"
+            data-href={location.href}
+            data-layout="button_count" />
+        </div>
         <div className="episode-details">
           <div className="inner">
             <div className="episode-description">

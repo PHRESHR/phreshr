@@ -5,6 +5,8 @@ import { compose, flattenProp, pure } from 'recompose';
 import { Image, Transformation } from 'cloudinary-react';
 
 import displayLoadingState from 'ui/components/Loading';
+import EpisodeList from 'ui/containers/EpisodeList';
+import Collapse from 'ui/components/Collapse';
 import { AspectRatio5x2 } from 'ui/styles/AspectRatios';
 import FeaturedContainer from './styles';
 import * as FEATUREDS_QUERY from 'ui/graphql/AllFeaturedsQuery.graphql';
@@ -23,50 +25,29 @@ function Featured(props: Props) {
   const imagesList = allFeatureds.map(featured => featured.episode.featureImageUrl);
   const featured = allFeatureds[0];
 
-  const inlineStyle = {
-    backgroundImage: `url(${featured.episode.featureImageUrl})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center',
-    width: '100%',
-    height: '100%',
-  };
-  // const state: State = {
-  //   images: [...imagesList],
-  // };
-  // state.images.forEach(image => {
-  //   const preload = new Image();
-  //   preload.src = image;
-  // });
-  // const {images} = state;
-  // console.log(images);
-  // const featuredImage = images.map(image => {
-  //   return {
-  //     content: <img src={image}/>,
-  //     preview: <img src={image}/>,
-  //   };
-  // });
-  // console.log(featuredImage);
   return (
     <FeaturedContainer>
-      <div className="preview" style={inlineStyle} />
-      {/*<Image cloudName="phreshr-media" style={{ height: '100vh' }}
+      <Image cloudName="phreshr-media" style={{
+        backgroundSize: 'contain',
+        backgroundPosition: 'center center' }}
         publicId={featured.episode.imagePublicId}
         aspect_ratio="16:9"
-        height="1440"
+        height="1080"
         dpr="auto"
         quality="auto"
-        width="2560"
         crop="scale"
-        gravity="center"
         format="webp">
-        <Transformation height="1440" dpr="2560" quality="auto" width="auto" sizes="100vw" responsive />
-      </Image>*/}
+        <Transformation height="1080" dpr="auto" quality="auto" width="auto" />
+      </Image>
       <div className="featured-info">
         <h3>{featured.episode.show.title} | <span>Season.{featured.episode.season}</span></h3>
         <Link to={`/watch/${featured.episode.id}/${featured.episode.uid}`}>
           <h1>{featured.episode.title}</h1>
         </Link>
       </div>
+      <Collapse>
+        <EpisodeList />
+      </Collapse>
     </FeaturedContainer>
   );
 }

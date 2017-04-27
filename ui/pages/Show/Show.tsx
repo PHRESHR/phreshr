@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ShowDetail from 'ui/components/ShowDetail';
+import ShowDetail from 'ui/containers/ShowDetail';
 
 interface Props {
   match: {

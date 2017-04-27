@@ -10,6 +10,9 @@ import render from './render';
 
 dotenv.config({ silent: true });
 
+global['navigator'] = global['navigator'] || {};
+global['navigator'].userAgent = global['navigator'].userAgent || 'all';
+
 const {
   ENV = process.env.NODE_ENV || 'development',
   HOST = '0.0.0.0',
