@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
 import * as serialize from 'serialize-javascript';
 
 const isPROD = process.env.NODE_ENV === 'production';
@@ -7,21 +6,22 @@ const isPROD = process.env.NODE_ENV === 'production';
 import 'ui/styles/global-styles';
 
 interface Props {
+  head: any;
   html: string;
   state: object;
   styles: string;
 }
 
 function Html(props: Props) {
-  const { html, state, styles } = props;
-  const helmet = Helmet.renderStatic();
+  const { head, html, state, styles } = props;
+  // const helmet = Helmet.renderStatic();
   return (
-    <html lang="en">
+    <html {...head.htmlAttributes.toString()}>
       <head>
-        {helmet.title.toComponent()}
-        {helmet.meta.toComponent()}
-        {helmet.link.toComponent()}
-        {helmet.script.toComponent()}
+        {head.title.toComponent()}
+        {head.meta.toComponent()}
+        {head.link.toComponent()}
+        {head.script.toComponent()}
         <style type="text/css">
           {styles}
         </style>
@@ -41,7 +41,7 @@ function Html(props: Props) {
         { isPROD && (
             <script dangerouslySetInnerHTML={{ __html: `
             if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.register('/assets/service-worker.js');
+              navigator.serviceWorker.register('/service-worker.js');
             }
           ` }} />
           )

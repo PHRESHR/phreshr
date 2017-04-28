@@ -38,6 +38,7 @@
     "jsx-alignment": [
       false
     ],
-    "jsx-no-multiline-js": false
+    "jsx-no-multiline-js": false,
+    "jsx-boolean-value": false
   }
 }

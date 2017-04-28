@@ -35,10 +35,11 @@ export default async (req: express.Request, res: express.Response, context: Cont
     res.redirect(302, context.url);
   }
 
+  const head = Helmet.renderStatic();
   const content = await renderToStringWithData(app);
   const styles = await styleSheet.getCSS();
   const initialState = await client.getInitialState();
   const state = { apollo: initialState };
-  const html = <Html html={content} state={state} styles={styles} />;
+  const html = <Html head={head} html={content} state={state} styles={styles} />;
   return `<!doctype html>${renderToString(html)}`;
 };

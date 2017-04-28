@@ -12,10 +12,20 @@ function Home() {
   return (
     <HomeContainer>
       <Helmet>
-        <title>Home</title>
-         <meta
-          name="description"
-          content="PHRESHR is Music + Culture + Art + Lifestyle" />
+        <title>PHRESHR</title>
+        <meta
+        name="description"
+        content="PHRESHR is a hub of original shows that explores, discusses and delves into topics relevant to hip-hop culture, music, lifestyle, and art" />
+        <meta property="og:title" content="PHRESHR" />
+        <meta
+          property="og:description"
+          content="PHRESHR is a hub of original shows that explores, discusses and delves into topics relevant to hip-hop culture, music, lifestyle, and art" />
+        <meta property="og:url" content="https://phreshr.com" />
+        <meta property="twitter:title" content="PHRESHR" />
+        <meta
+          property="twitter:description"
+          content="PHRESHR is a hub of original shows that explores, discusses and delves into topics relevant to hip-hop culture, music, lifestyle, and art" />
+        <meta property="twitter:url" content="https://phreshr.com" />
       </Helmet>
       <ScrollToTop />
       <Featured />

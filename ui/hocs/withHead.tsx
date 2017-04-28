@@ -17,32 +17,19 @@ export default Comp => enhance(props => {
       <Helmet>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="description"
-          content="React starter for building universal apps with Typescript, Webpack 2, Apollo" />
-        <meta property="og:title" content="React Starter Typescript" />
-        <meta
-          property="og:description"
-          content="React starter fo building universal apps with Typescript, Webpack 2, Apollo" />
-        <meta property="og:url" content="https://example.com" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="PHRESHR" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="React Starter Typescript" />
-        <meta property="og:image" content="" />
-        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1280" />
         <meta property="og:image:height" content="720" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="twitter:title" content="React Starter Typescript" />
-        <meta
-          property="twitter:description"
-          content="React starter for building universal apps with Typescript, Webpack 2, Apollo" />
-        <meta property="twitter:url" content="https://example.com" />
+
+        <meta property="twitter:site" content="PHRESHR" />
         <meta property="twitter:card" content="summary" />
-        <meta property="twitter:site" content="React Starter Typescript" />
-        <meta property="twitter:image" content="" />
-        <meta property="twitter:creator" content="@ReactStarterTypescript" />
-        <meta name="apple-mobile-web-app-title" content="React Starter Typescript" />
-        <meta name="application-name" content="React Starter Typescript" />
+        <meta property="twitter:image" content="/phreshr-banner.png" />
+        <meta property="twitter:creator" content="@PHRESHR" />
+        <meta name="apple-mobile-web-app-title" content="PHRESHR" />
+        <meta name="application-name" content="PHRESHR" />
         <meta name="theme-color" content="#2980b9" />
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
