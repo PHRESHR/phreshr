@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { HelmetData } from 'react-helmet';
 import * as serialize from 'serialize-javascript';
 
 const isPROD = process.env.NODE_ENV === 'production';
@@ -6,7 +7,7 @@ const isPROD = process.env.NODE_ENV === 'production';
 import 'ui/styles/global-styles';
 
 interface Props {
-  head: any;
+  head: HelmetData;
   html: string;
   state: object;
   styles: string;
@@ -14,7 +15,6 @@ interface Props {
 
 function Html(props: Props) {
   const { head, html, state, styles } = props;
-  // const helmet = Helmet.renderStatic();
   return (
     <html {...head.htmlAttributes.toString()}>
       <head>

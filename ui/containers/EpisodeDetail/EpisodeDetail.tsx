@@ -16,6 +16,7 @@ interface Props {
 function EpisodeDetail(props: Props) {
   const { Episode } = props;
   const episode = Episode;
+  console.log(episode);
   return (
     <div className="episode-detail">
       <Helmet>

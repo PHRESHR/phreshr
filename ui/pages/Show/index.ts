@@ -1,7 +1,8 @@
-import AsyncComponent from 'ui/components/AsyncComponent';
+import Show from './Show';
+// import AsyncComponent from 'ui/components/AsyncComponent';
 
-const Show = AsyncComponent(() =>
-  System.import('./Show').then(module => module.default),
-);
+// const Show = AsyncComponent(() =>
+//   System.import('./Show').then(module => module.default),
+// );
 
 export default Show;

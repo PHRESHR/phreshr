@@ -7,7 +7,6 @@ WORKDIR /usr/src/app
 # Install Yarn and Node.js dependencies
 RUN npm install --production --no-progress
 
-EXPOSE 8080
-
+EXPOSE 80
 
 CMD npm start

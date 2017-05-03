@@ -2,6 +2,7 @@ import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as compression from 'compression';
+import * as cors from 'cors';
 import * as morgan from 'morgan';
 import * as dotenv from 'dotenv';
 
@@ -24,13 +25,14 @@ const isPROD = process.env.NODE_ENV === 'production';
 const app: express.Express = express();
 
 if (isPROD) {
+  app.disable('x-powered-by');
+  app.use(cors());
   app.use(compression());
 } else {
   const {
     webpackDevMiddleware,
     webpackHotMiddleware,
   } = require('./middleware/webpack');
-
   app.use(webpackDevMiddleware);
   app.use(webpackHotMiddleware);
 }
@@ -41,8 +43,8 @@ app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
   .use(morgan(isPROD ? 'combined' : 'dev'))
-  .use(express.static(path.join(__dirname, '/static'), { maxAge: 86400000 }))
-  .use(express.static(path.join(__dirname, '/static/assets'), { maxAge: 86400000 }))
+  .use(express.static(path.join(__dirname, '../build/static'), { maxAge: 86400000 }))
+  .use(express.static(path.join(__dirname, '../build/static/assets'), { maxAge: 86400000 }))
   .get ('*', async ( req: express.Request, res: express.Response) => {
     const context: Context = {};
     let html;

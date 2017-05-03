@@ -27,18 +27,25 @@ function App() {
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:image" content="/phreshr-banner.png" />
         <meta property="twitter:creator" content="@PHRESHR" />
-        <meta name="apple-mobile-web-app-title" content="PHRESHR" />
+
         <meta name="application-name" content="PHRESHR" />
         <meta name="theme-color" content="#2980b9" />
-        <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png" />
+
+        <meta name="apple-mobile-web-app-title" content="PHRESHR" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        <link rel="icon" sizes="32x32" type="image/png" href="/favicon-32x32.png" />
+        <link rel="icon" sizes="16x16" type="image/png" href="/favicon-16x16.png" />
+
+        <link rel="apple-touch-startup-image" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
         <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
         <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
-        <link rel="icon" sizes="32x32" type="image/png" href="/favicon-icon-32x32.png" />
-        <link rel="icon" sizes="16x16" type="image/png" href="/favicon-icon-16x16.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
         <link rel="mask-icon" href="/safari-pinned-tab.svg" />
+        <link rel="manifest" href="/manifest.json" />
       </Helmet>
       <Header />
       <Routes />
